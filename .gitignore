@@ -32,7 +32,7 @@ Assets/AssetStoreTools*
 /*.pdb
 /*.svd
 /*.userprefs
-/*.csproj
+*.csproj
 /*.csproj.CoreCompileInputs.cache
 /*.pidb
 /*.suo
