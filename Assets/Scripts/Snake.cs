@@ -17,21 +17,28 @@ public class Snake : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (_direction.x != 0f)
         {
-            _direction = Vector2.up;
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                _direction = Vector2.up;
+            }
+            else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                _direction = Vector2.down;
+            }
         }
-        else if (Input.GetKeyDown(KeyCode.S))
+        // Only allow turning left or right while moving in the y-axis
+        else if (_direction.y != 0f)
         {
-            _direction = Vector2.down;
-        }
-        else if (Input.GetKeyDown(KeyCode.A))
-        {
-            _direction = Vector2.left;
-        }
-        else if (Input.GetKeyDown(KeyCode.D))
-        {
-            _direction = Vector2.right;
+            if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                _direction = Vector2.right;
+            }
+            else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                _direction = Vector2.left;
+            }
         }
 
     }
